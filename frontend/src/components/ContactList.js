@@ -1,3 +1,8 @@
+/**
+ * Contact list component responsible to list, edit, delete, and create contacts using the API.
+ * @author Juan Pablo Allin Cañas - jpac.647@gmail.com
+ * @version 1.0.0
+ */
 import React, { Component } from 'react';
 import { Button, ButtonGroup, Container, Table } from 'reactstrap';
 import AppNavbar from './AppNavBar';
@@ -11,12 +16,18 @@ class ContactList extends Component {
         this.remove = this.remove.bind(this);
     }
 
+    /**
+    * ComponentDidMount function calls the API to load our contact list.
+    */
     componentDidMount() {
         fetch('/contacts')
             .then(response => response.json())
             .then(data => this.setState({contacts: data}));
     }
 
+    /**
+    * Remove function to handle the DELETE call to the API when we want to delete a contact.
+    */
     async remove(id) {
         await fetch(`/contact/${id}`, {
             method: 'DELETE',
@@ -30,13 +41,15 @@ class ContactList extends Component {
         });
     }
     
+    /**
+    * Render function renders the HTML with Edit, Delete, and Add Contact actions.
+    */
     render() {
         const {contacts, isLoading} = this.state;
     
         if (isLoading) {
             return <p>Cargando...</p>;
         }
-    
         const contactList = contacts.map(contact => {
             return <tr key={contact.id}>
                 <td style={{whiteSpace: 'nowrap'}}>{contact.name}</td>
@@ -51,7 +64,6 @@ class ContactList extends Component {
                 </td>
             </tr>
         });
-    
         return (
             <div>
                 <AppNavbar/>

@@ -1,3 +1,8 @@
+/**
+ * Contact edit component responsible for creating and editing our contact.
+ * @author Juan Pablo Allin Cañas - jpac.647@gmail.com
+ * @version 1.0.0
+ */
 import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { Button, Container, Form, FormGroup, Input, Label } from 'reactstrap';
@@ -5,6 +10,9 @@ import AppNavbar from './AppNavBar';
 
 class ContactEdit extends Component {
 
+    /**
+     * Empty item to edit a user.
+     */
     emptyItem = {
         name: '',
         email: '',
@@ -20,7 +28,10 @@ class ContactEdit extends Component {
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
-
+    /**
+     * componentDidMount function checks whether we're dealing with the create or edit option, 
+     * and in case of editing, it'll fetch our contact from the API.
+     */
     async componentDidMount() {
         if (this.props.match.params.id !== 'new') {
             const contact = await (await fetch(`/contact/${this.props.match.params.id}`)).json();
@@ -28,6 +39,9 @@ class ContactEdit extends Component {
         }
     }
 
+    /**
+     * HandleChange function updates our component state item property that will be used when submitting our form.
+     */
     handleChange(event) {
         const target = event.target;
         const value = target.value;
@@ -37,6 +51,10 @@ class ContactEdit extends Component {
         this.setState({item});
     }
 
+    /**
+     * handeSubmit function calls the API, sending the request to a PUT or POST method, 
+     * depending on the feature we're invoking. For that, we can check if the id property is filled.
+     */
     async handleSubmit(event) {
         event.preventDefault();
         const {item} = this.state;
@@ -52,6 +70,10 @@ class ContactEdit extends Component {
         this.props.history.push('/contacts');
     }
 
+    /**
+     * Form
+     * @returns form
+     */
     render() {
         const {item} = this.state;
         const title = <h2 class="my-3">{item.id ? 'Editar Contacto' : 'Añadir Contacto'}</h2>;
