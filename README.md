@@ -7,6 +7,10 @@ Clonar el repositorio usando el comando: git clone https://github.com/jpabloalli
 
 Instalar el node_modules en el paquete frontend utilizando el comando: npm install
 
+Recuerda que debes correr primero la apliación de springboot [backend] y luego correr el proyectode react con el comando npm start para que pueda llamar la API.
+
+¡Maneja tu agenda de contactos a tu antojo! :)
+
 ### Paquetes
 
 El documeto `CRUD-Sofka` tiene los siguientes archivos:
