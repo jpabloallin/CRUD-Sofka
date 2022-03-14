@@ -7,7 +7,7 @@ Clonar el repositorio usando el comando: git clone https://github.com/jpabloalli
 
 Instalar el node_modules en el paquete frontend utilizando el comando: npm install
 
-Recuerda que debes correr primero la apliación de springboot [backend] y luego correr el proyectode react con el comando npm start para que pueda llamar la API.
+Recuerda que debes correr primero la apliación de springboot `[backend]` y luego correr el proyectode react con el comando npm start para que pueda llamar la API.
 
 ¡Maneja tu agenda de contactos a tu antojo! :)
 
@@ -15,10 +15,10 @@ Recuerda que debes correr primero la apliación de springboot [backend] y luego 
 
 El documeto `CRUD-Sofka` tiene los siguientes archivos:
 
-- [backend] - Contiene la parte del servidor en Sprintboot, conexión a base de datos, ontroladores para las rutas, etc.
-- [frontend] - Contiene la parte del cliente, formularios para crear y editar contactos, ver lista de contactos, eliminar contactos.
-- [contact.sql] - Base de datos de contacto.
-- [contact Datagrid project] - Proyecto de la base de datos en Datagrid.
+- `[backend]` - Contiene la parte del servidor en Sprintboot, conexión a base de datos, ontroladores para las rutas, etc.
+- `[frontend]` - Contiene la parte del cliente, formularios para crear y editar contactos, ver lista de contactos, eliminar contactos.
+- `[contact.sql]` - Base de datos de contacto.
+- `[contact Datagrid project]` - Proyecto de la base de datos en Datagrid.
 
 ### Base de datos
 
