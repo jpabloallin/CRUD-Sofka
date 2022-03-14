@@ -46,7 +46,7 @@ class ContactList extends Component {
                 <td>
                     <ButtonGroup>
                         <Button size="sm" color="primary" tag={Link} to={"/contact/" + contact.id}>Editar</Button>
-                        <Button size="sm" color="danger" onClick={() => this.remove(contact.id)}>Eliminar</Button>
+                        <Button size="sm" color="danger" onClick={() => {this.remove(contact.id);window.location.reload();}}>Eliminar</Button>
                     </ButtonGroup>
                 </td>
             </tr>
